@@ -1,8 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
+import { ConcoursService } from './concours.service';
 import { AppComponent } from './app.component';
+
+
+import { HttpClientModule } from '@angular/common/http';import { FormsModule } from '@angular/forms';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -10,9 +16,16 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule, FormsModule
   ],
-  providers: [],
+  providers: [ConcoursService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
+
+
+
+ 
