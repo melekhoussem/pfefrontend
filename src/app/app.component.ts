@@ -13,6 +13,9 @@ import { NgForm } from '@angular/forms';
 })
 
 export class AppComponent implements OnInit  {
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
   public Concours: Concours[];
   public editConcours: Concours;
   public deleteConcours: Concours;
