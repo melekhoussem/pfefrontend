@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Concours } from './concours';
+import { Concours } from './concours/concours';
 import { ConcoursService } from './concours.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgForm } from '@angular/forms';

@@ -7,6 +7,7 @@ import { AppRoutingModule} from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';import { FormsModule } from '@angular/forms';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ConcoursComponent } from './concours/concours.component';
+import { PosteComponent } from './poste/poste.component';
 
 
 
@@ -16,7 +17,8 @@ import { ConcoursComponent } from './concours/concours.component';
   declarations: [
     AppComponent,
     SidebarComponent,
-    ConcoursComponent
+    ConcoursComponent,
+    PosteComponent
   ],
   imports: [
     BrowserModule,
