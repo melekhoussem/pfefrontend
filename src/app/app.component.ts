@@ -30,7 +30,7 @@ export class AppComponent implements OnInit  {
     this.concoursService.getConcours().subscribe(
       (response: Concours[]) => {
         this.Concours = response;
-        console.log(this.Concours);
+        
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
