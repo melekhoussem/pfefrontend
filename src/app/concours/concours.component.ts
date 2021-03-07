@@ -5,6 +5,9 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 
+import { NgForm } from '@angular/forms';
+
+
 @Component({
   selector: "app-concours",
   templateUrl: "./concours.component.html",
@@ -12,6 +15,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class ConcoursComponent implements OnInit {
   public concours:Concours[];
+  public deleteConcours: Concours;
 
   constructor(private concoursService: ConcoursService,
     private router: Router) {}
@@ -32,8 +36,8 @@ export class ConcoursComponent implements OnInit {
       );
     }
 
-    public onDeleteConcours(ConcoursId: number): void {
-      this.concoursService.deleteConcours(ConcoursId).subscribe(
+    public onDeleteConcours(idConcours: number): void {
+      this.concoursService.deleteConcours(idConcours).subscribe(
         (response: void) => {
           console.log(response);
           this.getConcours();
@@ -43,23 +47,34 @@ export class ConcoursComponent implements OnInit {
         }
       );
     }
-    
-  
 
+
+    public onOpenModal(concours: Concours, mode: string): void {
+          const container = document.getElementById('main-container');
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.style.display = 'none';
+          button.setAttribute('data-toggle', 'modal');
+        
+          if (mode === 'delete') {
+            this.deleteConcours = concours;
+            button.setAttribute('data-target', '#deleteConcoursModal');
+          }
+          if (container !== null) {
+            container.appendChild(button);
+        
+          
+          button.click();
+        } 
+      }
+    
+    
+       
+        
+  
 }
 
   
-
-
-
-
-
-
-
-
-
-
-
 
 
 

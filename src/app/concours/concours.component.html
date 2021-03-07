@@ -8,7 +8,7 @@
                              search 
                             </button>
                           </div>
-    <div class="main-content">
+    <div class="main-content " id="main-container">
       <div class="container-fluid">
           <div class="row">
               <div class="col-md-12">
@@ -17,7 +17,7 @@
                   <div class="card">
                       <div class="card-header card-header-danger"  style="background-color: #e3f2fd;">
                         
-                        <button type="button" class="btn btn-primary" style="float: right; margin: 20px;">ajouter concours</button>
+                        <button type="button" class="btn btn-primary" style="float: right; margin: 20px;"  (click)="onOpenModal(null, 'add')">ajouter concours</button>
                           <h4 class="card-title ">les concours</h4>  
                         
 
@@ -56,11 +56,11 @@
                                           <td>
                                             {{ concours.datefin}}
                                           </td>
-                                          <td  class="float-right btn-group btn-group-sm">
-                                           
-                                                <a (click)="onOpenModal(employee, 'edit')" class="btn btn-primary tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
-                                                <a (click)="onOpenModal(concours, 'delete')" class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete"><i class="fa fa-times"></i></a>
-                                             
+                                          <td  class="float-right btn-group btn-group-sm" >
+                                            
+                                                <a (click)="onOpenModal(concours, 'edit')" class="btn btn-primary tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
+                                                <a (click)="onOpenModal(Concours, 'delete')" class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete"><i class="fa fa-times"></i></a>
+                                          
                                           </td>
                                       </tr>
                                     
@@ -70,4 +70,29 @@
                       </div>
                   </div>
               </div>
-         
+            </div>
+           </div>
+ 
+    <!-- Delete Modal -->
+          <div class="modal fade" id="deleteConcoursModal" tabindex="-1" role="dialog" aria-labelledby="deleteModelLabel" aria-hidden="true">
+           <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                 <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModelLabel">Delete concours</h5>
+                    <button type="button" class="close"  data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                 </div>
+                 <div class="modal-body">
+                    <p>Are you sure you want to delete concours {{deleteConcours?.nameConcours}}?</p>
+                    <div class="modal-footer">
+                       <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                       <button (click)="onDeleteConcours(deleteConcours?.idConcours)" class="btn btn-danger" data-dismiss="modal">Yes</button>
+                    </div>
+                 </div>
+              </div>
+           </div>
+         </div>
+         </div>
+        
+        

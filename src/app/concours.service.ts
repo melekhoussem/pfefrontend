@@ -23,7 +23,7 @@ export class ConcoursService {
     return this.http.put<Concours>(`${this.apiServerUrl}/Concours/update`, concours);
   }
 
-  public deleteConcours(IdConcours: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiServerUrl}/Concours/delete/${IdConcours}`);
+  public deleteConcours(idConcours: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiServerUrl}/Concours/delete/${idConcours}`);
   }
 }

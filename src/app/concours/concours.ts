@@ -1,6 +1,6 @@
 export interface Concours {
     
-    id : number  ;
+    idConcours : number  ;
     nameConcours : String  ;
 	libelleConcours : String ;
 	descriptionConcours : String ; 
