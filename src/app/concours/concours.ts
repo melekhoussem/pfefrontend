@@ -4,6 +4,7 @@ export interface Concours {
     nameConcours : String  ;
 	libelleConcours : String ;
 	descriptionConcours : String ; 
+	datefin: Date ;
 	dateDebut : Date ;
-	dateFin: Date ;
+	
   }

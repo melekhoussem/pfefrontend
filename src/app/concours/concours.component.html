@@ -32,32 +32,35 @@
                                   <thead class=" text-primary">
                                       
                                       <th>
-                                          Name
+                                          Nom de concours
                                       </th>
                                       <th>
-                                          Country
+                                          Date debut
                                       </th>
                                       <th>
-                                          City
+                                          Date  Fin
                                       </th>
                                       <th>
-                                          Salary
+                                          Action
                                       </th>
                                   </thead>
                                   <tbody>
-                                      <tr *ngFor= "let Concours of Concours">
+                                      <tr *ngFor= "let concours of concours">
                                          
                                           <td>
-                                           {{Concours.nameConcours}}
+                                           {{ concours.nameConcours}}
                                           </td>
                                           <td>
-                                              Niger
+                                            {{ concours.dateDebut}}
                                           </td>
                                           <td>
-                                              Oud-Turnhout
+                                            {{ concours.datefin}}
                                           </td>
-                                          <td class="text-primary">
-                                              $36,738
+                                          <td  class="float-right btn-group btn-group-sm">
+                                           
+                                                <a (click)="onOpenModal(employee, 'edit')" class="btn btn-primary tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
+                                                <a (click)="onOpenModal(concours, 'delete')" class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete"><i class="fa fa-times"></i></a>
+                                             
                                           </td>
                                       </tr>
                                     
