@@ -81,11 +81,11 @@ export class AppComponent implements OnInit  {
   public searchConcours(key: string): void {
     console.log(key);
     const results: Concours[] = [];
-    for (const concoours of this.Concours) {
-      if (concoours.nameConcours.toLowerCase().indexOf(key.toLowerCase()) !== -1
-      || concoours.descriptionConcours.toLowerCase().indexOf(key.toLowerCase()) !== -1)
+    for (const concours of this.Concours) {
+      if (concours.nameConcours.toLowerCase().indexOf(key.toLowerCase()) !== -1
+      || concours.descriptionConcours.toLowerCase().indexOf(key.toLowerCase()) !== -1)
        {
-        results.push(concoours);
+        results.push(concours);
       }
     }
     this.Concours = results;
