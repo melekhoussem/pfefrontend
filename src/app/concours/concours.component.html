@@ -1,13 +1,15 @@
   
                           <div class="input-group col-lg-12 " style="float: right; padding-bottom: 10px;"> 
                             <div class="form-outline">
-                              <input type="search" id="form1" class="form-control" />
+                                <input type="search" (ngModelChange)="searchConcours(key.value)" #key="ngModel" ngModel
+                                name="Rechercher" id="searchName" class="form-control mr-sm-2" placeholder="Rechercher concours..." required>
                               
                             </div>
                             <button type="button" class="btn btn-primary">
-                             search 
+                            Rechercher 
                             </button>
                           </div>
+                          
     <div class="main-content " id="main-container">
       <div class="container-fluid">
           <div class="row">
@@ -96,7 +98,7 @@
                     </button>
                  </div>
                  <div class="modal-body">
-                    <p>Are you sure you want to delete concours {{deleteConcours?.nameConcours}}?</p>
+                    <p>Are you sure you want to delete concours {{deleteConcours?.nameConcours}}</p>
                     <div class="modal-footer">
                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
                        <button (click)="onDeleteConcours(deleteConcours?.idConcours)" class="btn btn-danger" data-dismiss="modal">Yes</button>
@@ -150,3 +152,60 @@
     </div>
     </div>
         
+
+
+    <!-- Edit Modal -->
+  <div class="modal fade" id="updateConcoursModal" tabindex="-1" role="dialog" aria-labelledby="concoursEditModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+       <div class="modal-content">
+          <div class="modal-header">
+             <h5 class="modal-title" id="updateConcoursModalLabel">Modifier  {{editConcours?.nameConcours}}</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+             </button>
+          </div>
+          <div class="modal-body">
+             <form #editForm="ngForm">
+                <div class="form-group">
+                   <label for="name">Nom Concours</label>
+                   <input type="text" ngModel="{{editConcours?.nameConcours}}" name="nameConcours" class="form-control" id="nameConcours" aria-describedby="emailHelp" placeholder="Non concours">
+                </div>
+                <input type="hidden" ngModel="{{editConcours?.idConcours}}" name="id" class="form-control" id="id" placeholder="Email">
+                
+                <div class="form-group">
+                   <label for="libelle">Libelle Concours</label>
+                   <input type="text" ngModel="{{editConcours?.libelleConcours}}" name="libelleConcours" class="form-control" id="libelleConcours" placeholder="libelleConcours">
+                </div>
+                <div class="form-group">
+                   <label for="phone">description Concours</label>
+                   <input type="text" ngModel="{{editConcours?.descriptionConcours}}" name="descriptionConcours" class="form-control" id="descriptionConcours" placeholder="descriptionConcours">
+                </div>
+                <div class="form-group">
+                   <label for="debut">Date Debut</label>
+                   <input type="date" ngModel="{{editConcours?.dateDebut}}" name="dateDebut" class="form-control" id="dateDebut" name="dateDebut" placeholder="dateDebut">
+                </div>
+                <div class="form-group">
+                   <label for="Fin">Date Fin</label>
+                   <input type="date" ngModel="{{editConcours?.datefin}}" name="datefin" class="form-control" id="datefin" placeholder="datefin">
+                </div>
+                <div class="modal-footer">
+                   <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Fermer</button>
+                   <button (click)="onUpdateConcours(editForm.value)" data-dismiss="modal" class="btn btn-primary" >enregister le changement</button>
+                </div>
+             </form>
+          </div>
+       </div>
+    </div>
+  </div>
+
+
+
+    <!-- Notification for no employees -->
+    <div *ngIf="Concours?.length == 0" class="col-lg-12 col-md-12 col-xl-12">
+        <div class="alert alert-info" role="alert">
+          <h4 class="alert-heading">pas de concours!</h4>
+          <p>pas de concours enregister.</p>
+        </div>
+        </div>
+      
+  
