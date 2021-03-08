@@ -35,6 +35,12 @@
                                           Nom de concours
                                       </th>
                                       <th>
+                                        Libelle Concours
+                                    </th>
+                                    <th>
+                                        description Concours                                   
+                                     </th>
+                                      <th>
                                           Date debut
                                       </th>
                                       <th>
@@ -50,6 +56,12 @@
                                           <td>
                                            {{ concours.nameConcours}}
                                           </td>
+                                          <td>
+                                            {{ concours.libelleConcours}}
+                                           </td>
+                                           <td>
+                                            {{ concours.descriptionConcours}}
+                                           </td>
                                           <td>
                                             {{ concours.dateDebut}}
                                           </td>
@@ -95,4 +107,46 @@
          </div>
          </div>
         
+         <!-- Add Employee Modal -->
+  <div class="modal fade" id="addConcoursModal" tabindex="-1" role="dialog" aria-labelledby="addConcoursModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h5 class="modal-title" id="addConcoursModalLabel"> ajouter concours</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+         </div>
+         <div class="modal-body">
+            <form #addForm="ngForm" (ngSubmit)="onAddConcours(addForm)">
+            <div class="form-group">
+               <label for="name">Nom Concours</label>
+               <input type="text" ngModel name="nameConcours" class="form-control" id="nameConcours" placeholder="Nom Concours" required>
+            </div>
+            <div class="form-group">
+               <label for="libelle">Libelle Concours</label>
+               <input type="text" ngModel name="libelleConcours" class="form-control" id="libelleConcours" placeholder="libelle Concours" required>
+            </div>
+            <div class="form-group">
+               <label for="phone">Description Concours</label>
+               <input type="text" ngModel name="descriptionConcours" class="form-control" id="descriptionConcours" placeholder="description Concours" required>
+            </div>
+            <div class="form-group">
+               <label for="phone">Date Debut</label>
+               <input type="date" ngModel name="dateDebut" class="form-control" id="dateDebut" placeholder="date Debut" required>
+            </div>
+            <div class="form-group">
+               <label for="phone">Date Fin</label>
+               <input type="date" ngModel name="datefin" class="form-control" id="datefin" placeholder="Date Fin" required>
+            </div>
+           >
+            <div class="modal-footer">
+               <button type="button" id="add-concours-form" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+               <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary" >ajouter le concours</button>
+            </div>
+            </form>
+         </div>
+      </div>
+    </div>
+    </div>
         

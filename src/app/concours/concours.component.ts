@@ -36,6 +36,35 @@ export class ConcoursComponent implements OnInit {
       );
     }
 
+    public onAddConcours(addForm: NgForm): void {
+      document.getElementById('add-concours-form').click();
+      this.concoursService.addConcours(addForm.value).subscribe(
+        (response: Concours) => {
+          console.log(response);
+          this.getConcours();
+          addForm.reset();
+        },
+        (error: HttpErrorResponse) => {
+          alert(error.message);
+          addForm.reset();
+        }
+      );
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public onDeleteConcours(idConcours: number): void {
       this.concoursService.deleteConcours(idConcours).subscribe(
         (response: void) => {
@@ -55,7 +84,9 @@ export class ConcoursComponent implements OnInit {
           button.type = 'button';
           button.style.display = 'none';
           button.setAttribute('data-toggle', 'modal');
-        
+          if (mode === 'add') {
+            button.setAttribute('data-target', '#addConcoursModal');
+          }
           if (mode === 'delete') {
             this.deleteConcours = concours;
             button.setAttribute('data-target', '#deleteConcoursModal');
