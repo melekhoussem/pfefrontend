@@ -16,7 +16,7 @@ import { NgForm } from '@angular/forms';
 export class ConcoursComponent implements OnInit {
   public concours:Concours[];
   public deleteConcours: Concours;
-  public editConcours: Concours;
+  public updateConcours: Concours;
 
   constructor(private concoursService: ConcoursService,
     private router: Router) {}
@@ -79,6 +79,7 @@ export class ConcoursComponent implements OnInit {
 
 
     public onDeleteConcours(idConcours: number): void {
+      console.log(idConcours);
       this.concoursService.deleteConcours(idConcours).subscribe(
         (response: void) => {
           console.log(response);
@@ -113,7 +114,7 @@ export class ConcoursComponent implements OnInit {
             button.setAttribute('data-target', '#addConcoursModal');
           }
           if (mode === 'edit') {
-            this.editConcours = concours;
+            this.updateConcours = concours;
             button.setAttribute('data-target', '#updateConcoursModal');
           }
           if (mode === 'delete') {
