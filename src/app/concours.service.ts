@@ -5,6 +5,10 @@ import { Observable } from 'rxjs';
 import { Concours } from './concours/concours';
 import { environment } from 'src/environments/environment';
 
+
+
+
+
 @Injectable({providedIn: 'root'})
 export class ConcoursService {
   private apiServerUrl = environment.apiBaseUrl;
@@ -27,3 +31,5 @@ export class ConcoursService {
     return this.http.delete<void>(`${this.apiServerUrl}/Concours/delete/${idConcours}`);
   }
 }
+
+

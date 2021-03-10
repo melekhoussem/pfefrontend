@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';import { FormsModule } f
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ConcoursComponent } from './concours/concours.component';
 import { PosteComponent } from './poste/poste.component';
+import { PosteService } from './poste.service';
 
 
 
@@ -24,7 +25,8 @@ import { PosteComponent } from './poste/poste.component';
     BrowserModule,
     HttpClientModule, FormsModule,AppRoutingModule
   ],
-  providers: [ConcoursService],
+  providers: [ConcoursService , PosteService] ,
+              
   bootstrap: [AppComponent]
 })
 export class AppModule { }

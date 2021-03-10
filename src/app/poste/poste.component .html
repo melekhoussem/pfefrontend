@@ -137,11 +137,11 @@
 
 
 <!-- Edit Modal -->
-<div class="modal fade" id="updatePosteModal" tabindex="-1" role="dialog" aria-labelledby="updatePosteModalLabel" aria-hidden="true">
+<div class="modal fade" id="updateConcoursModal" tabindex="-1" role="dialog" aria-labelledby="updateConcoursModalLabel" aria-hidden="true">
 <div class="modal-dialog" role="document">
 <div class="modal-content">
 <div class="modal-header">
-<h5 class="modal-title" id="updatePosteModalLabel">Modifier  {{updatePoste?.nomPoste}}</h5>
+<h5 class="modal-title" id="updateConcoursModalLabel">Modifier  {{updateConcours?.nameConcours}}</h5>
 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 <span aria-hidden="true">&times;</span>
 </button>
@@ -149,28 +149,35 @@
 <div class="modal-body">
 <form #editForm="ngForm">
 <div class="form-group">
-<label for="name">Nom poste</label>
-<input type="text" ngModel="{{updatePoste?.nomPoste}}" name="nomPoste" class="form-control" id="nomPoste" aria-describedby="emailHelp" placeholder="Non poste">
+<label for="name">Nom Concours</label>
+<input type="text" ngModel="{{updateConcours?.nameConcours}}" name="nameConcours" class="form-control" id="nameConcours" aria-describedby="emailHelp" placeholder="Non concours">
 </div>
 
-<input type="hidden" ngModel="{{updatePoste?.idPoste}}" name="idPoste" class="form-control" id="idPoste" placeholder="Email">
+<input type="hidden" ngModel="{{updateConcours?.idConcours}}" name="idConcours" class="form-control" id="idConcours" placeholder="Email">
 
 
 
 
 
 <div class="form-group">
-<label for="codesPoste">Code Poste</label>
-<input type="text" ngModel="{{updatePoste?.codePoste}}" name="codePoste" class="form-control" id="codePoste" placeholder="codePoste">
+<label for="odeConcours">Code Concours</label>
+<input type="text" ngModel="{{updateConcours?.codeConcours}}" name="codeConcours" class="form-control" id="codeConcours" placeholder="codeConcours">
 </div>
 <div class="form-group">
-<label for="phone"> Le nombre maximum de participants </label>
-<input type="text" ngModel="{{updatePoste?.nbmaxparticipants}}" name="dnbmaxparticipants" class="form-control" id="nbmaxparticipants" placeholder="Le nombre maximum de participants">
+<label for="phone">description Concours</label>
+<input type="text" ngModel="{{updateConcours?.descriptionConcours}}" name="descriptionConcours" class="form-control" id="descriptionConcours" placeholder="descriptionConcours">
 </div>
-
+<div class="form-group">
+<label for="debut">Date Debut</label>
+<input type="date" ngModel="{{updateConcours?.dateDebut}}" name="dateDebut" class="form-control" id="dateDebut" name="dateDebut" placeholder="dateDebut">
+</div>
+<div class="form-group">
+<label for="Fin">Date Fin</label>
+<input type="date" ngModel="{{updateConcours?.datefin}}" name="datefin" class="form-control" id="datefin" placeholder="datefin">
+</div>
 <div class="modal-footer">
 <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Fermer</button>
-<button (click)="onUpdatePoste(editForm.value)" data-dismiss="modal" class="btn btn-primary" >enregister le changement</button>
+<button (click)="onUpdateConcours(editForm.value)" data-dismiss="modal" class="btn btn-primary" >enregister le changement</button>
 </div>
 </form>
 </div>
@@ -187,3 +194,5 @@
 <p>pas de poste enregister.</p>
 </div>
 </div>
+
+
