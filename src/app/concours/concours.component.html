@@ -92,13 +92,13 @@
            <div class="modal-dialog" role="document">
               <div class="modal-content">
                  <div class="modal-header">
-                    <h5 class="modal-title" id="deleteModelLabel">Delete concours</h5>
+                    <h5 class="modal-title" id="deleteModelLabel">Supprimer concours</h5>
                     <button type="button" class="close"  data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                  </div>
                  <div class="modal-body">
-                    <p>Are you sure you want to delete concours {{deleteConcours?.nameConcours}}</p>
+                    <p>Voullez les vous supprimer ce  {{deleteConcours?.nameConcours}}</p>
                     <div class="modal-footer">
                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
                        <button (click)="onDeleteConcours(deleteConcours?.idConcours)" class="btn btn-danger" data-dismiss="modal">Yes</button>
@@ -170,8 +170,13 @@
                    <label for="name">Nom Concours</label>
                    <input type="text" ngModel="{{updateConcours?.nameConcours}}" name="nameConcours" class="form-control" id="nameConcours" aria-describedby="emailHelp" placeholder="Non concours">
                 </div>
-                <input type="hidden" ngModel="{{updateConcours?.idConcours}}" name="id" class="form-control" id="id" placeholder="Email">
+               
+                <input type="hidden" ngModel="{{updateConcours?.idConcours}}" name="idConcours" class="form-control" id="idConcours" placeholder="Email">
                 
+                
+                  
+
+
                 <div class="form-group">
                    <label for="libelle">Libelle Concours</label>
                    <input type="text" ngModel="{{updateConcours?.libelleConcours}}" name="libelleConcours" class="form-control" id="libelleConcours" placeholder="libelleConcours">
