@@ -9,6 +9,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { ConcoursComponent } from './concours/concours.component';
 import { PosteComponent } from './poste/poste.component';
 import { PosteService } from './poste.service';
+import { AuthComponent } from './auth/auth.component';
 
 
 
@@ -19,7 +20,8 @@ import { PosteService } from './poste.service';
     AppComponent,
     SidebarComponent,
     ConcoursComponent,
-    PosteComponent
+    PosteComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,

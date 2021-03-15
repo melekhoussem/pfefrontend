@@ -10,8 +10,8 @@ import { NgForm } from '@angular/forms';
 
 @Component({
   selector: "app-poste",
-  templateUrl: "./poste.component.html",
-  styleUrls: ["./poste.component.css"]
+  templateUrl:"./poste.component.html",
+  styleUrls:["./poste.component.css"]
 })
 export class PosteComponent implements OnInit {
   public poste:Poste[];

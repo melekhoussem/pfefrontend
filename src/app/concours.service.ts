@@ -16,19 +16,19 @@ export class ConcoursService {
   constructor(private http: HttpClient){}
 
   public getConcours(): Observable<Concours[]> {
-    return this.http.get<Concours[]>(`${this.apiServerUrl}/Concours/all`);
+    return this.http.get<Concours[]>(`${this.apiServerUrl}/api/concour/all`);
   }
 
   public addConcours(concours: Concours): Observable<Concours> {
-    return this.http.post<Concours>(`${this.apiServerUrl}/Concours/add`, concours);
+    return this.http.post<Concours>(`${this.apiServerUrl}/api/concour/add`, concours);
   }
 
   public updateConcours(concours: Concours): Observable<Concours> {
-    return this.http.put<Concours>(`${this.apiServerUrl}/Concours/update`, concours);
+    return this.http.put<Concours>(`${this.apiServerUrl}/api/concour/update`, concours);
   }
 
   public deleteConcours(idConcours: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiServerUrl}/Concours/delete/${idConcours}`);
+    return this.http.delete<void>(`${this.apiServerUrl}/api/concour/delete/${idConcours}`);
   }
 }
 
